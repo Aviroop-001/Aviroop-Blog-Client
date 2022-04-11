@@ -1,0 +1,58 @@
+@import '../../global.scss';
+
+.Post{
+    // border: rgb(24, 245, 16) 1px solid;
+    width: 40%;
+    margin: 5px 10px;
+    background-color: $lightest;
+    color: $darker;
+    @include tab{
+        width: 35%;
+      }
+    .imageContainer{
+        text-align: center;
+        img{
+            // border: red 1px solid;
+            height: 12rem;
+            width: 19rem;
+            margin: 0.7rem auto;
+            @include tab{
+                height: 9rem;
+                width: 14rem;
+              }
+        }
+    }
+    .categoryContainer{
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        @include tab{
+            width: 90%;
+          }
+        span{
+            text-align: center;
+            font-weight: lighter;
+            
+        }
+    }
+    .postTitle{
+        text-align: center;
+        letter-spacing: 4px;
+        font-size: 1.5rem;
+        @include tab{
+            font-size: 1.4rem;
+          }
+    }
+    .timeStamp{
+        text-align: center;
+        @include tab{
+            font-size: 0.9rem;
+          }
+    }
+    .postContent{
+        text-align: center;
+        padding: 5px;
+    }
+}

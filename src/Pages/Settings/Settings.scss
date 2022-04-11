@@ -1,0 +1,93 @@
+@import '../../global.scss';
+
+.Settings{
+    display: flex;
+    .settingsContainer{
+        flex: 9;
+        .settingsHeader{
+            // border: green 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 1rem;
+            .mainHeading{
+                font-size: 1.7rem;
+                color: $darker;
+                @include tab{
+                    font-size: 1.4rem;
+                }
+            }
+            .deleteHeading{
+                font-size: 1.1rem;
+                color: crimson;
+                float: right;
+            }
+        }
+        .settingsForm{
+            // border: rgb(77, 77, 40) 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+            label{
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                margin: 1rem;
+                color: $darker;
+            }
+            .profilePictureSettings{
+                display: flex;
+                align-items: center;
+                @include tab{
+                    margin: 1rem 0;
+                }
+                img{
+                    border-radius: 50%;
+                    height: 8rem;
+                    width: 10rem;
+                }
+                .MuiSvgIcon-root{
+                    margin: 1px 3rem;
+                    font-size: 3.5rem;
+                    color: $dark;
+                }
+            }
+            .fieldLabels{
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                margin: 1rem;
+                color: $darker;
+                @include tab{
+                    margin: 2rem 0;
+                    font-size: 1rem;
+                }
+            }
+            .inputFields{
+                border: none;
+                outline: none;
+                background-color: $lightest;
+                border-bottom: black 1px solid;
+                color: $dark;
+                width: 70%;
+                font-size: 1.2rem;
+            }
+            .updateBtn{
+                margin-top: 2rem;
+                padding: 10px;
+                font-weight: bold;
+                width: 20%;
+                color: $lightest;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                background: linear-gradient($light, $darker);
+                cursor: pointer;
+                @include tab{
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}

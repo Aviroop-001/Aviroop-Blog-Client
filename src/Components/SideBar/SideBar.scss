@@ -1,0 +1,93 @@
+@import '../../global.scss';
+
+.SideBar{
+    flex: 3;
+    background-color: $lighter;
+    color: $darker;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    box-shadow: 1px 2px 5px 2px $dark;
+    @include tab{
+        flex: 2;
+    }
+    @include avgmobile{
+        display: none;
+    }
+    // border: yellowgreen 1px solid;
+    .sidebarTitle{
+        font-family: 'Poppins';
+        text-align: center;
+        margin: 1rem 0;
+        @include tab{
+            margin: 0.5rem 0;
+          }
+    }
+    img{
+        height: 10rem;
+        width: 18rem;
+        margin: 1rem;
+        @include tab{
+            height: 8rem;
+            width: 16rem;
+            margin: 5px;
+        }
+    }
+    .sidebarContent{
+        font-family: 'Poppins';
+        margin: 1.5rem 5px;
+        @include tab{
+            margin: 0.5rem 1px;
+          }
+    }
+    .sidebarCategoriesContainer{
+        .sidebarCategoriesTitle{
+            font-family: 'Poppins';
+            text-align: center;
+            margin: 1rem 0;
+            @include tab{
+                margin: 0.5rem 0;
+              }
+        }
+        .sidebarCategoriesList{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            li.sidebarCategory{
+                width: 45%;
+                text-align: center;
+                list-style: none;
+                margin: 1rem 0;
+                color: $darker;
+            }
+        }
+    }
+    .sidebarSocialContainer{
+        .sidebarSocialContainerTitle{
+            font-family: 'Poppins';
+            text-align: center;
+            margin: 1rem 0;
+            @include tab{
+                margin: 0.5rem 0;
+              }
+        }
+        .sidebarSocialIconsContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 2rem 0;
+            @include tab{
+                margin: 1rem 0;
+                justify-content: space-around;
+              }
+            .MuiSvgIcon-root{
+                font-size: 2.5rem;
+                color: $darker;
+                @include tab{
+                    font-size: 2rem;;
+                  }
+            }
+        }
+    }
+}

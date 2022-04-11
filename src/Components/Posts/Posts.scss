@@ -1,0 +1,15 @@
+@import '../../global.scss';
+
+.Posts{
+    // border: yellow 1px solid;
+    background-color: $lightest;
+    flex: 12;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-left: 2px;
+    @include tab{
+        flex: 10;
+    }
+}

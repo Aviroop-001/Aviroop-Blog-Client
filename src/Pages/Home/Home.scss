@@ -1,0 +1,9 @@
+@import '../../global.scss';
+
+.Home{
+    // border: 1px red solid;
+    .content{
+        display: flex;
+        background-color: $lightest;
+    }
+}

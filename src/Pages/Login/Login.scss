@@ -1,0 +1,67 @@
+@import '../../global.scss';
+
+.Login{
+    // border: red 1px solid;
+    color: $lightest;
+    height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(70, 70,70, 0.227),rgba(0, 0, 0, 0.6)) ,url('../../../public/Assets/Images/pencils.jpg');
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .loginCredentials{
+        border: silver 0.1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+        padding: 1rem;
+        @include tab{
+            height: 15rem;
+            width: 18rem;
+        }
+        label{
+            font-size: 1.2rem;
+        }
+        input{
+            margin: 1rem;
+            width: 17rem;
+            height: 3rem;
+            padding: 2px;
+            text-align: center;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        .login{
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: none;
+            margin: 1rem;
+            &:disabled{
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+    .registerLogin{
+        position: absolute;
+        padding: 0.5rem auto;
+        border-radius: 10px;
+        height: 2rem;
+        border: none;
+        margin: 1rem;
+        background-color: $lighter;
+        color: rgb(205, 205, 252);
+        top: 5rem;
+        right: 1rem;
+        width: 8rem;
+        font-size: 1.1rem;
+    }
+}

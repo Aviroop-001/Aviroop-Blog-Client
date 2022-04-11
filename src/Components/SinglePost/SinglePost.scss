@@ -1,0 +1,82 @@
+@import '../../global.scss';
+
+.SinglePost{
+    flex: 9;
+    // border: yellow 1px solid;
+    color: $darker;
+    .imageContainer{
+        // border: red 1px solid;
+        width: 100%;
+        text-align: center;
+        // margin: 2rem auto;
+        img{
+            height: 15rem;
+            width: 95%;
+            margin: 2rem auto;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }
+    .postTitle{
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin: 1rem;
+        .buttons{
+             float: right;
+            .MuiSvgIcon-root{
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .postTitleEdit{
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin: 1rem;
+        border: none;
+        color: $darker;
+        background-color: $lighter;
+    }
+    .postinfo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .authorName{
+            margin: 1rem;
+            letter-spacing: 2px;
+            font-size: 1.3rem;
+        }
+        .timeStamp{
+            margin: 1rem;  
+            color: $dark;
+        }
+    }
+    .postDesc{
+        text-align: center;
+        margin: 1rem;
+        font-size: 1.1rem;
+    }
+    .postDescEdit{
+        text-align: center;
+        margin: 1rem;
+        font-size: 1.1rem;
+        color: $darker;
+        background-color: $lighter;
+        border: none;
+        height: 10rem;
+        width: 30rem;
+    }
+    .updateButton{
+        float: right;
+        background-color: $darker;
+        color: $lighter;
+        border-radius: 15px;
+        &:hover{
+            background-color: $dark;
+        }
+       .MuiSvgIcon-root{
+            font-size: 1.5rem;
+        }
+   }
+}
