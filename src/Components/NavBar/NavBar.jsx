@@ -5,14 +5,12 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import SearchIcon from '@material-ui/icons/Search';
-import Brightness2Icon from '@material-ui/icons/Brightness2';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
 import {Avatar, IconButton} from '@material-ui/core';
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
 
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Link
 } from "react-router-dom";
 import { useContext } from 'react';
@@ -20,7 +18,7 @@ import {Context} from '../../context/Context';
 
 const NavBar = () => {
 
-  const {user, dispatch, isFetching} = useContext(Context);
+  const {user, dispatch} = useContext(Context);
 
   const logoutHandler = () =>{
     setmenuactive(!menuactive);

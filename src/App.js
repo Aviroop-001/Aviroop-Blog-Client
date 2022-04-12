@@ -9,16 +9,14 @@ import Settings from './Pages/Settings/Settings';
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Link
+  Routes
 } from "react-router-dom";
-import { useState } from 'react';
 import { useContext } from 'react';
 import {Context} from './context/Context';
 
 function App() {
 
-  const {user, dispatch, isFetching} = useContext(Context);
+  const {user} = useContext(Context);
 
   return (
     <div className="App">
