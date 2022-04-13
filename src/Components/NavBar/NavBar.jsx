@@ -74,9 +74,9 @@ const NavBar = () => {
                 <li className="navItem">
                   <Link className='link' to="/compose" onClick={()=>{setmenuactive(!menuactive)}}> COMPOSE </Link>
                 </li>
-                <li className="navItem" onClick={logoutHandler}>
-                  <Link className='link' to="/"> {user && "LOGOUT"} </Link>
-                </li>
+                {user && <li className="navItem" onClick={logoutHandler}>
+                  <Link className='link' to="/"> LOGOUT </Link>
+                </li>}
             </ul>
         </div>
         <div className="searchMe">
