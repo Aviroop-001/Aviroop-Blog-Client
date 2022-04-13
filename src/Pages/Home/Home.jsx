@@ -9,8 +9,8 @@ import { useLocation } from 'react-router-dom';
 const Home = () => {
 
   const {search}= useLocation();
-
   const [posts, setposts] = useState([]);
+
   useEffect( () => {
     const fetchPosts = () =>{
       axios.get("/posts"+search)

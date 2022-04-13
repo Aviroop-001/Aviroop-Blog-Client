@@ -11,14 +11,18 @@ import axios from "axios";
 
 const SideBar = () => {
   const [categories, setcategories] = useState([]);
+  const [error, setError] = useState('');
   useEffect(() => {
     const fetchCategories = () => {
       axios.get("/categories").then((res) => {
         setcategories(res.data);
-      });
+        console.log(res.data);
+      }).catch(err => setError(err.message));
     };
     fetchCategories();
   }, []);
+
+  console.log(error);
 
   return (
     <div className="SideBar">
@@ -39,7 +43,7 @@ const SideBar = () => {
 
         <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
         <ul className="sidebarCategoriesList">
-              {categories.map( (c) =>(
+              {categories?.map((c) =>(
                   <li className="sidebarCategory" key={c._id}>
                     <Link to={`/?cat=${c.category}`} style={{textDecoration:"none",color:"inherit",cursor:"pointer"}}>{c.category}</Link>
                   </li>
