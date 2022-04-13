@@ -7,14 +7,15 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import { IconButton } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import apiHandler from "../../apiHandler";
+import axios from "axios";
+// import apiHandler from "../../apiHandler";
 
 const SideBar = () => {
   const [categories, setcategories] = useState([]);
   const [error, setError] = useState('');
   useEffect(() => {
     const fetchCategories = () => {
-        apiHandler.get("/categories").then((res) => {
+      axios.get("/categories").then((res) => {
         setcategories(res.data);
         console.log(res.data);
       }).catch(err => setError(err.message));
