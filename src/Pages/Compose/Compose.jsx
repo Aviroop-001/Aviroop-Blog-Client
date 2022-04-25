@@ -92,7 +92,7 @@ const Compose = () => {
       <form className="postComposer" onSubmit={composeHandler}>
         <label htmlFor="inputFile">
           {/* <IconButton> */}
-          <AddCircleOutlineIcon style={{ color: '#4A4E69', fontSize: "3rem" }} />
+          <AddCircleOutlineIcon style={{ color: '#86C232', fontSize: "3rem" }} />
           {/* </IconButton> */}
         </label>
 

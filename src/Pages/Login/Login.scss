@@ -44,6 +44,8 @@
             border-radius: 10px;
             border: none;
             margin: 1rem;
+            background-color: $darker;
+            color: $lightest;
             &:disabled{
                 opacity: 0.5;
                 cursor: not-allowed;

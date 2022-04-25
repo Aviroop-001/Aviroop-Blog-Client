@@ -2,7 +2,7 @@
 
 .Register{
     // border: red 1px solid;
-    color: $lightest;
+    color: $darker;
     height: calc(100vh - 4rem);
     display: flex;
     justify-content: center;
@@ -47,6 +47,8 @@
             border-radius: 10px;
             border: none;
             margin: 1rem;
+            background-color: $darker;
+            color: $lightest;
         }
     }
     .loginRegister{
@@ -56,7 +58,8 @@
         height: 2rem;
         border: none;
         margin: 1rem;
-        background-color: $lightest;
+        background-color: $light;
+        color: $lighter;
         top: 5rem;
         right: 1rem;
         width: 5rem;

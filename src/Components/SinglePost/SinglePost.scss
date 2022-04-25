@@ -1,7 +1,6 @@
 @import '../../global.scss';
 
 .SinglePost{
-    flex: 9;
     // border: yellow 1px solid;
     color: $darker;
     .imageContainer{
@@ -45,17 +44,19 @@
         .authorName{
             margin: 1rem;
             letter-spacing: 2px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            color: $light;
         }
         .timeStamp{
             margin: 1rem;  
-            color: $dark;
+            color: $lighter;
         }
     }
     .postDesc{
         text-align: center;
         margin: 1rem;
         font-size: 1.1rem;
+        color: $dark;
     }
     .postDescEdit{
         text-align: center;

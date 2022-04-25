@@ -2,8 +2,9 @@
 
 .Settings{
     display: flex;
+    flex-direction: column;
     .settingsContainer{
-        flex: 9;
+        // flex: 9;
         .settingsHeader{
             // border: green 1px solid;
             display: flex;

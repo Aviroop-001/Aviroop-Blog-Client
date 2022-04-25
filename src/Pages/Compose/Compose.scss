@@ -199,14 +199,14 @@
           @keyframes firework {
             0% {
               opacity: 1;
-              box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+              box-shadow: 0 0 0 -2px #86C232, 0 0 0 -2px #86C232, 0 0 0 -2px #86C232, 0 0 0 -2px #86C232, 0 0 0 -2px #86C232, 0 0 0 -2px #86C232;
             }
             30% {
               opacity: 1;
             }
             100% {
               opacity: 0;
-              box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+              box-shadow: 0 -15px 0 0px #86C232, 14px -8px 0 0px #86C232, 14px 8px 0 0px #86C232, 0 15px 0 0px #86C232, -14px 8px 0 0px #86C232, -14px -8px 0 0px #86C232;
             }
           }
           
@@ -252,7 +252,7 @@
             background-color: $lightest;
         }
         #inputContent{
-            color: $darker;
+            color: $dark;
             border-radius: 10px;
             padding: 1rem;
             border: none;
@@ -277,10 +277,10 @@
             &:hover{
               background-color: $dark;
             }
-            color: $lighter;
+            color: $lightest;
             letter-spacing: 1px;
             font-style: italic;
-            box-shadow: 0 5px 20px $light;
+            // box-shadow: 0 5px 20px $light;
             @include tab{
               bottom: 1rem;
               right: 10rem;

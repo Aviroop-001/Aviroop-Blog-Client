@@ -4,6 +4,7 @@
     // border: 1px red solid;
     .content{
         display: flex;
+        flex-direction: column;
         background-color: $lightest;
     }
 }

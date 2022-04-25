@@ -1,13 +1,13 @@
 @import '../../global.scss';
 
 .SideBar{
-    flex: 3;
+    // flex: 3;
     background-color: $lighter;
     color: $darker;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem;
-    box-shadow: 1px 2px 5px 2px $dark;
+    padding: 2rem 1rem;
+    // border-radius: 10px;
+    margin: 2rem 0;
+    // box-shadow: 1px 2px 5px 2px $dark;
     @include tab{
         flex: 2;
     }
@@ -73,10 +73,11 @@
         }
         .sidebarSocialIconsContainer{
             display: flex;
+            width: 40%;
             justify-content: center;
             align-items: center;
             justify-content: space-evenly;
-            margin: 2rem 0;
+            margin: 2rem auto;
             @include tab{
                 margin: 1rem 0;
                 justify-content: space-around;

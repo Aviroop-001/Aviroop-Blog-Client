@@ -27,22 +27,12 @@ const SideBar = () => {
 
   return (
     <div className="SideBar">
-      <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
-      <h1 className="sidebarTitle">About</h1>
-
-      <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
-      <img src="Assets\Images\nature-gbb91b4047_1920.jpg" alt="" />
-      <p className="sidebarContent">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil
-        aperiam beatae dignissimos quod impedit sunt ipsa? Modi, repudiandae.
-        Accusamus.
-      </p>
 
       <div className="sidebarCategoriesContainer">
-        <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
+        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
         <h2 className="sidebarCategoriesTitle">Categories</h2>
 
-        <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
+        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
         <ul className="sidebarCategoriesList">
               {categories?.map((c) =>(
                   <li className="sidebarCategory" key={c._id}>
@@ -53,10 +43,10 @@ const SideBar = () => {
       </div>
 
       <div className="sidebarSocialContainer">
-        <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
+        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
         <h2 className="sidebarSocialContainerTitle">Follow Me</h2>
 
-        <hr style={{ width: "85%", margin: "1px auto", background: "grey" }} />
+        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
         <div className="sidebarSocialIconsContainer">
           <IconButton>
             <LinkedInIcon />

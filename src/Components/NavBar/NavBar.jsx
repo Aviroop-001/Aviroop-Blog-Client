@@ -1,10 +1,6 @@
 import './NavBar.scss';
 
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import SearchIcon from '@material-ui/icons/Search';
+import {LinkedIn, Facebook, GitHub, Instagram, Search} from '@material-ui/icons';
 import {Avatar, IconButton} from '@material-ui/core';
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
@@ -21,8 +17,9 @@ const NavBar = () => {
   const {user, dispatch} = useContext(Context);
 
   const logoutHandler = () =>{
-    setmenuactive(!menuactive);
+    console.log("logout tried");
     dispatch({type : "LOGOUT"});
+    console.log("logout success")
     swal({
       title: "You logged out",
       icon: "success",
@@ -44,20 +41,20 @@ const NavBar = () => {
   },[])
 
   return (
-    <nav className="navigationBar">
+  <nav className="navigationBar">
     {(menuactive || screenWidth > 880) && (<div className="NavBar">
         <div className="socialMedia">
           {/* <IconButton> */}
-            <LinkedInIcon />
+            <LinkedIn />
           {/* </IconButton> */}
           {/* <IconButton> */}
-            <FacebookIcon />
+            <Facebook />
           {/* </IconButton> */}
           {/* <IconButton> */}
-            <GitHubIcon />
+            <GitHub />
           {/* </IconButton> */}
           {/* <IconButton> */}
-            <InstagramIcon />
+            <Instagram />
           {/* </IconButton> */}
         </div>
         <div className="navItems">
@@ -98,7 +95,7 @@ const NavBar = () => {
             </>
           }
           <IconButton>
-            <SearchIcon />
+            <Search />
           </IconButton>
         </div>
     </div>)}
@@ -107,7 +104,7 @@ const NavBar = () => {
       <div className='line' id="line2"></div>
       <div className='line' id="line3"></div>
     </div>
-    </nav>
+  </nav>
   )
 }
 

@@ -2,7 +2,7 @@
 
 .Post{
     // border: rgb(24, 245, 16) 1px solid;
-    width: 40%;
+    width: 30%;
     margin: 5px 10px;
     background-color: $lightest;
     color: $darker;
@@ -23,11 +23,12 @@
         }
     }
     .categoryContainer{
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        color: $dark;
         @include tab{
             width: 90%;
           }
@@ -41,12 +42,18 @@
         text-align: center;
         letter-spacing: 4px;
         font-size: 1.5rem;
+        color: $darker;
         @include tab{
             font-size: 1.4rem;
           }
     }
     .timeStamp{
-        text-align: center;
+        width: 80%;
+        // border: 1px solid red;
+        text-align: right;
+        // font-weight: lighter;
+        font-style: italic;
+        color: $lighter;
         @include tab{
             font-size: 0.9rem;
           }
@@ -54,5 +61,6 @@
     .postContent{
         text-align: center;
         padding: 5px;
+        color: $dark;
     }
 }
