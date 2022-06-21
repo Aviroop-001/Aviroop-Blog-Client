@@ -10,7 +10,7 @@ const Header = () => {
             </span>
             <span className="smTitle">By Aviroop Banerjee</span>
         </div>
-        <img className='headerImage' src="Assets\Images\nature-gbb91b4047_1920.jpg" alt="" />
+        {/* <img className='headerImage' src="Assets\Images\nature-gbb91b4047_1920.jpg" alt="" /> */}
     </div>
   )
 }

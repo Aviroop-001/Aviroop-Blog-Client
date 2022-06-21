@@ -1,11 +1,11 @@
 import './Settings.scss';
 import SideBar from '../../Components/SideBar/SideBar';
 import PersonIcon from '@material-ui/icons/Person';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState} from 'react';
 import { useContext } from 'react';
 import {Context} from '../../context/Context';
 import { IconButton } from '@material-ui/core';
+import API from '../../api';
 
 
 const Settings = () => {
@@ -32,13 +32,13 @@ const Settings = () => {
             updatedUser.profilepic = fileName;
             //FIXME: Data is not being sent as a request to backend
             try {
-              await axios.post("/upload", data);
+              await API.post("/upload", data);
               console.log("Form Data sent to Server");
             }
             catch (err) {}
         }
         try {
-          const res = await axios.put(`/user/${user._id}`, updatedUser);
+          const res = await API.put(`/user/${user._id}`, updatedUser);
           console.log('User Updated Successfully !!!');
         }
         catch (error) {}

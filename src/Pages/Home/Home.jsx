@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '../../Components/Header/Header';
 import SideBar from '../../Components/SideBar/SideBar';
 import Posts from '../../Components/Posts/Posts';
-import axios from "axios";
+import API from '../../api';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
@@ -12,8 +12,8 @@ const Home = () => {
   const [posts, setposts] = useState([]);
 
   useEffect( () => {
-    const fetchPosts = () =>{
-      axios.get("/posts"+search)
+    const fetchPosts = async () =>{
+      await API.get("/posts"+search)
       .then( res =>{
         setposts(res.data);
       })

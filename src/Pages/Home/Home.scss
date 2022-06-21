@@ -2,9 +2,12 @@
 
 .Home{
     // border: 1px red solid;
+    display: flex;
+    flex-direction: column;
     .content{
         display: flex;
         flex-direction: column;
+        margin-top: 20%;
         background-color: $lightest;
     }
 }

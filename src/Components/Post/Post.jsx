@@ -3,12 +3,10 @@ import './Post.scss';
 
 const Post = ({post}) => {
 
-  const pf = "http://localhost:5000/images/";
-
   return (
     <div className='Post'>
         <div className="imageContainer">
-            <img className='postImage' src={pf + post.image} alt="" />
+            <img className='postImage' src={post.image} alt="" />
         </div>
         <div className="categoryContainer">
           {post.categories.map((c) =>(

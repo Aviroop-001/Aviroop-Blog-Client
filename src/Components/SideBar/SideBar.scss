@@ -11,9 +11,9 @@
     @include tab{
         flex: 2;
     }
-    @include avgmobile{
-        display: none;
-    }
+    // @include avgmobile{
+    //     display: none;
+    // }
     // border: yellowgreen 1px solid;
     .sidebarTitle{
         font-family: 'Poppins';
@@ -78,10 +78,6 @@
             align-items: center;
             justify-content: space-evenly;
             margin: 2rem auto;
-            @include tab{
-                margin: 1rem 0;
-                justify-content: space-around;
-              }
             .MuiSvgIcon-root{
                 font-size: 2.5rem;
                 color: $darker;

@@ -1,57 +1,55 @@
+//FIXME: Categories is not being posted
+
 import "./Compose.scss";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import { Avatar, IconButton } from "@material-ui/core";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import swal from 'sweetalert';
-
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Context } from "../../context/Context";
+import swal from 'sweetalert';
+import Axios from 'axios';
+import API from '../../api';
 
 
 const Compose = () => {
   const [title, settitle] = useState("");
   const [content, setcontent] = useState("");
-  const [file, setfile] = useState(null);
-  const [author, setauthor] = useState("");
+  const [imageURL, setimageURL] = useState("");
+  // const [author, setauthor] = useState("");
   const [categories, setcategories] = useState([]);
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { user } = useContext(Context);
 
+  const imageUploadHandler = async (file) =>{
+    if(file.type === 'image/jpeg' || file.type === "image/png"){
+      const data = new FormData();
+      data.append("file", file)
+      data.append("upload_preset", "blog-app-assets")
+      data.append("cloud_name","aviroop")
+
+      await Axios.post("https://api.cloudinary.com/v1_1/aviroop/image/upload", data)
+      .then( (res) => {
+        setimageURL(res.data.url.toString());
+        console.log("Image uploaded successfully")
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
+    }
+    else {
+      console.log("file must be jpeg/png");
+    }
+  };
 
   const composeHandler = async (e) => {
     e.preventDefault();
 
-    
-
     const currPost = {
-      author: user.username,
+      author: user.data.username,
       title,
       content,
       categories,
+      image: imageURL,
     };
-
-    if(file){
-        const data = new FormData();
-        const fileName = Date.now() + file.name;
-        data.append("file", file);
-        data.append("name", fileName);
-        // const data = {"file":file, "name": fileName}
-        currPost.image = fileName;
-        // for (var pair of data.entries()) {
-        //   console.log(pair[0]+ ', ' + pair[1]); 
-        // }
-        //FIXME: Data is not being sent as a request to backend
-        try {
-          await axios.post("/upload", data);
-          console.log("Form Data sent to Server");
-        }
-        catch (err) {
-          console.log(err);
-        }
-    }
-
     try {
-      const res = await axios.post("/posts", currPost);
+      const res = await API.post("/posts", currPost);
       console.log('Posting Successful !!!')
       swal({
         title: "Posted Successfully ;>",
@@ -63,7 +61,6 @@ const Compose = () => {
       console.log(er);
     }
   };
-
 
   //TODO: JS for on click of checkboxes
   var checkedBoxes =[];
@@ -78,18 +75,19 @@ const Compose = () => {
     }
     console.log(checkedBoxes);
   }
+
   return (
     <div className="Compose">
-      {file && 
+      {imageURL && 
         <div className="imageContainer">
           <img
-            src={URL.createObjectURL(file)}
+            src={imageURL}
             className="postImage"
             alt=""
             />
         </div>
       }
-      <form className="postComposer" onSubmit={composeHandler}>
+      <form className="postComposer" method="post" onSubmit={composeHandler}>
         <label htmlFor="inputFile">
           {/* <IconButton> */}
           <AddCircleOutlineIcon style={{ color: '#86C232', fontSize: "3rem" }} />
@@ -136,16 +134,15 @@ const Compose = () => {
             onChange={checkHandler}/>
           <label htmlFor="Science">Science</label>
         </div>
-      {/* //TODO: Category Container ends here*/}
+        {/* //TODO: Category Container ends here*/}
 
         <input
           type="file"
           id="inputFile"
           autoComplete="off"
           style={{ display: "none" }}
-          onChange={ (e)=> setfile(e.target.files[0]) }
+          onChange={ (e)=> imageUploadHandler(e.target.files[0]) }
         />
-
         <input
           type="text"
           id="inputTitle"
@@ -154,7 +151,6 @@ const Compose = () => {
           autoComplete="off"
           onChange={ (e)=> settitle(e.target.value) }
         />
-
         <textarea
           type="text"
           id="inputContent"
@@ -163,13 +159,12 @@ const Compose = () => {
           onChange={ (e)=> setcontent(e.target.value) }
         />
 
-        <button className="postBtn" type="submit" onClick={() => setcategories(checkedBoxes)} >
+        <button className="postBtn" type='submit' onClick={()=>setcategories(checkedBoxes)}>
           Post
         </button>
       </form>
     </div>
   );
 };
-
 
 export default Compose;

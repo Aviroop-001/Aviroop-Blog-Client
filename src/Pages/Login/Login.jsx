@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import { useContext, useRef } from 'react';
 import {Context} from '../../context/Context';
-import axios from 'axios';
+import API from '../../api';
 import swal from 'sweetalert';
 
 const Login = () => {
@@ -22,8 +22,8 @@ const Login = () => {
     dispatch({type : "LOGIN_START"});
 
     try {
-      //TODO: basic axios post request
-      const res = await axios.post("/auth/login", {
+      //TODO: basic API post request
+      const res = await API.post("/auth/login", {
         //TODO: refer to useRef material
         username: userRef.current.value,
         password: passwordRef.current.value,

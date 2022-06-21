@@ -1,8 +1,8 @@
 import "./Register.scss";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 import swal from 'sweetalert';
+import API from '../../api';
 
 const Register = () => {
   const [username, setusername] = useState("");
@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit= async (e) =>{
     e.preventDefault();
     try {
-      const registerUser = await axios.post("/auth/register", {
+      const registerUser = await API.post("/auth/register", {
           username,
           email,
           password

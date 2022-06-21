@@ -7,7 +7,7 @@ import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import axios from "axios";
+import API from '../../api';
 
 const SinglePost = () => {
 
@@ -18,8 +18,8 @@ const SinglePost = () => {
     
     const [post, setpost] = useState({})
     useEffect(() => {
-        const getPost = () =>{
-            axios.get(`/posts/${currPostid}`)
+        const getPost = async () =>{
+            await API.get(`/posts/${currPostid}`)
             .then( res =>{
                 setpost(res.data);
             })
@@ -30,7 +30,7 @@ const SinglePost = () => {
     
     const deleteHandler = async() =>{
         try {
-            await axios.delete("/posts/"+currPostid);
+            await API.delete("/posts/"+currPostid);
             window.location.replace("/")
         } catch (err) {
             console.log(err);
@@ -42,7 +42,7 @@ const SinglePost = () => {
     const editHandler = async() =>{
         try {
             console.log("handling edit")
-            await axios.put(`/posts/${currPostid}`,{
+            await API.put(`/posts/${currPostid}`,{
                 title,
                 content
             });
