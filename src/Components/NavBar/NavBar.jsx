@@ -80,7 +80,12 @@ const NavBar = () => {
           { user ? 
           <Link to={`/settings`} style={{textDecoration:"none", color:"black"}}>
             <IconButton>
-              <Avatar sx={{ bgcolor: 'green', width: 30, height: 30 }}> AB </Avatar>
+              <Avatar sx={{ width: 30, height: 30 }} style={{"background":"crimson"}}> 
+                {/* For LocalHost */}
+                {/* {user.username.charAt(0).toUpperCase()} */}
+                {/* For Live Site-------------------- */}
+                {user.username.charAt(0).toUpperCase()}
+              </Avatar>
             </IconButton>
           </Link>
             : <>
