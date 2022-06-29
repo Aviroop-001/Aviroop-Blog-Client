@@ -87,4 +87,20 @@
             }
         }
     }
+    .aboutMe{
+        text-align: center;
+        margin: 2rem;
+        margin-top: 5rem;
+        color: rgb(15, 16, 15);
+        span{
+            color: $darker;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: Poppins;
+        }
+        p{
+            color: $dark;
+            font-size: 1.1rem;
+        }
+    }
 }

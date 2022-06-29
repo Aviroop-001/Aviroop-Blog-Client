@@ -1,0 +1,54 @@
+@import '../../global.scss';
+
+.About{
+    // border: red 1px solid;
+    color: $darker;
+    margin: 1rem 4rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    .aboutApp{
+        .title{
+            text-align: center;
+            font-size: 1.4rem;
+            text-decoration: underline;
+        }
+        .description{
+            padding: 1rem 8rem;
+            span{
+                font-size: 1.5rem;
+                margin: 5px 0.5rem;
+                font-style: oblique;
+            }
+        }
+        .features{
+            h2{
+                margin: 1rem;
+                text-align: center;
+                text-decoration: underline;
+            }
+            ul{
+                margin: 1rem 20%;
+                list-style: square;
+                li{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .aboutMe{
+        text-align: center;
+        margin: 2rem;
+        margin-top: 5rem;
+        color: $light;
+        span{
+            color: $darker;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: Poppins;
+        }
+        p{
+            color: $dark;
+            font-size: 1.1rem;
+        }
+    }
+}

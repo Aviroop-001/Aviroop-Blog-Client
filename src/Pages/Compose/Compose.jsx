@@ -28,7 +28,11 @@ const Compose = () => {
       await Axios.post("https://api.cloudinary.com/v1_1/aviroop/image/upload", data)
       .then( (res) => {
         setimageURL(res.data.url.toString());
-        console.log("Image uploaded successfully")
+        console.log("Image uploaded successfully");
+        swal({
+          title: "Post Image uploaded successfully",
+          icon: "success",
+        });
       })
       .catch((err)=>{
         console.log(err);
@@ -168,7 +172,14 @@ const Compose = () => {
             value="Infrastructure"
             onChange={(e) => checkHandler(e)}/>
           <label htmlFor="Infrastructure">Infrastructure</label>
-          <button className="postBtn" id="catsBtn"  onClick={(e)=>setcategories(checkedBoxes)}>
+          <button className="postBtn" id="catsBtn" 
+          onClick={(e)=>{
+            setcategories(checkedBoxes);
+            swal({
+              title: "Tags Selected ;>",
+              icon: "success",
+            });
+          }}>
           Set Tags
         </button>
         </div>

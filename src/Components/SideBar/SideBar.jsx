@@ -62,6 +62,11 @@ const SideBar = () => {
           </IconButton>
         </div>
       </div>
+      <div className="aboutMe">
+        Developed by <span>&#169;AVIROOP BANERJEE</span>
+        <p>Undergraduate Student, B.Tech- 2020-2024 <br/>
+          Backend Developer</p>
+      </div>
     </div>
   );
 };
