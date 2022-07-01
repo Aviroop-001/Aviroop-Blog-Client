@@ -19,9 +19,14 @@
                     font-size: 1.4rem;
                 }
             }
-            .deleteHeading{
+            .delete{
                 font-size: 1.1rem;
                 color: crimson;
+                font-weight: bolder;
+                cursor: pointer;
+                background-color: $light;
+                padding: 1rem;
+                border-radius: 0.5rem;
                 float: right;
             }
         }

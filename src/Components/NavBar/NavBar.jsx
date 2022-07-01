@@ -43,20 +43,8 @@ const NavBar = () => {
   return (
   <nav className="navigationBar">
     {(menuactive || screenWidth > 880) && (<div className="NavBar">
-        <div className="socialMedia">
-          {/* <IconButton> */}
-            <LinkedIn />
-          {/* </IconButton> */}
-          {/* <IconButton> */}
-            <Facebook />
-          {/* </IconButton> */}
-          {/* <IconButton> */}
-            <GitHub />
-          {/* </IconButton> */}
-          {/* <IconButton> */}
-            <Instagram />
-          {/* </IconButton> */}
-        </div>
+        <div className="mainTitle"></div>
+  
         <div className="navItems">
             <ul className="navList">
                 <li className="navItem">
@@ -76,6 +64,7 @@ const NavBar = () => {
                 </li>}
             </ul>
         </div>
+
         <div className="searchMe">
           { user ? 
           <Link to={`/settings`} style={{textDecoration:"none", color:"black"}}>
@@ -104,6 +93,12 @@ const NavBar = () => {
           </IconButton>
         </div>
     </div>)}
+    <div className="socialMedia">
+        <a href='https://github.com/Aviroop-001' target='_blank'><GitHub style={{color: "black" }}/></a>
+        <a href='https://www.linkedin.com/in/aviroop-banerjee-4946621b5/' target='_blank'><LinkedIn style={{color: "navy" }}/></a>
+        <a href='https://www.facebook.com/aviroop.banerjee.10' target='_blank'><Facebook style={{color: "blue" }}/></a>
+        <a href=''><Instagram style={{color: "purple" }}/></a>
+    </div>
     <div className={'btn '+ (menuactive && 'active')} onClick={toggleNav}>
       <div className='line' id="line1"></div>
       <div className='line' id="line2"></div>

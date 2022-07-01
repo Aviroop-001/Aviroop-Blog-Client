@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import {Context} from '../../context/Context';
 import { IconButton } from '@material-ui/core';
 import API from '../../api';
+import swal from 'sweetalert';
 
 
 const Settings = () => {
@@ -15,6 +16,26 @@ const Settings = () => {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [email, setemail] = useState("");
+
+    //functions
+    const deleteUserHandler = async() =>{
+        try {
+            const res = await API.delete(`/user/${user._id}`);
+            console.log(res);
+            swal({
+                title: "Account Deleted Successfully",
+                icon: "success",
+              });
+            dispatch({type : "LOGOUT"});
+            window.location.replace("/");
+        } catch (error) {
+            console.log(error);
+            swal({
+                title: "Something went Wrong",
+                icon: "error",
+              });
+        }
+    }
 
     const updateHandler = async (e) => {
         e.preventDefault();
@@ -40,6 +61,12 @@ const Settings = () => {
         try {
           const res = await API.put(`/user/${user._id}`, updatedUser);
           console.log('User Updated Successfully !!!');
+          swal({
+            title: "Account Updated Successfully",
+            icon: "success",
+          });
+        //   dispatch({type : "LOGIN_SUCCESS"});
+          window.location.replace("/");
         }
         catch (error) {}
     };
@@ -49,7 +76,7 @@ const Settings = () => {
         <div className="settingsContainer">
             <div className="settingsHeader">
                 <span className='mainHeading'>Update Account Credentials</span>
-                <span className='deleteHeading'>Delete Account</span>
+                <button className='delete' onClick={deleteUserHandler}>Delete Account</button>
             </div>
             <form className="settingsForm" onSubmit={updateHandler}>
                 <label htmlFor="">Profile Picture</label>
