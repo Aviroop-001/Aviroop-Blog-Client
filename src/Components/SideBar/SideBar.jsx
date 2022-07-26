@@ -30,7 +30,7 @@ const SideBar = () => {
 
       <div className="sidebarCategoriesContainer">
         <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
-        <h2 className="sidebarCategoriesTitle">Categories</h2>
+        <h2 className="sidebarCategoriesTitle">Filter by Tags</h2>
 
         <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
         <ul className="sidebarCategoriesList">
@@ -40,27 +40,6 @@ const SideBar = () => {
                   </li>
               ))}
             </ul>
-      </div>
-
-      <div className="sidebarSocialContainer">
-        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
-        <h2 className="sidebarSocialContainerTitle">Follow Me</h2>
-
-        <hr style={{ width: "15%", margin: "1px auto", background: "grey" }} />
-        <div className="sidebarSocialIconsContainer">
-          <IconButton>
-            <LinkedInIcon />
-          </IconButton>
-          <IconButton>
-            <FacebookIcon />
-          </IconButton>
-          <IconButton>
-            <GitHubIcon />
-          </IconButton>
-          <IconButton>
-            <InstagramIcon />
-          </IconButton>
-        </div>
       </div>
       <div className="aboutMe">
         Developed by <span>&#169;AVIROOP BANERJEE</span>

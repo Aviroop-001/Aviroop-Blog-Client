@@ -88,9 +88,6 @@ const NavBar = () => {
               </Link>
             </>
           }
-          <IconButton>
-            <Search />
-          </IconButton>
         </div>
     </div>)}
     <div className="socialMedia">

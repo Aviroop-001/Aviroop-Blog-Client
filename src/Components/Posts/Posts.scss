@@ -8,8 +8,5 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     // margin-top: 1rem;
-    margin-left: 2px;
-    @include tab{
-        flex: 10;
-    }
+    margin: 1rem 0.5rem;
 }

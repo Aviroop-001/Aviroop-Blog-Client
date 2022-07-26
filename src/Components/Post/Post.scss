@@ -1,71 +1,103 @@
-@import '../../global.scss';
+@import "../../global.scss";
 
-.Post{
-    // border: rgb(24, 245, 16) 1px solid;
-    width: 30%;
-    margin: 5px 10px;
-    background-color: $lightest;
-    color: $darker;
-    @include tab{
-        width: 35%;
+.Post {
+  // border: rgb(24, 245, 16) 1px solid;
+  width: 40%;
+  margin: 5px 10px;
+  background-color: $lightest;
+  color: $darker;
+  position: relative;
+  @include tab {
+    width: 70%;
+  }
+  .imageContainer {
+    width: 100%;
+    text-align: center;
+    img {
+      height: 100%;
+      width: 100%;
+      opacity: 0.5;
+      text-align: center;
+      @include tab {
       }
-    .imageContainer{
-        text-align: center;
-        img{
-            // border: red 1px solid;
-            height: 12rem;
-            width: 19rem;
-            margin: 0.7rem auto;
-            @include tab{
-                height: 9rem;
-                width: 14rem;
-              }
-        }
     }
-    .categoryContainer{
+  }
+  .postTitleTemporary{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-style: italic;
+    font-size: 2rem;
+    color: $darker;
+    @include tab {
+      font-size: 1.4rem;
+    }
+  }
+  .data {
+    // border: 1px solid yellow;
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    .categoryContainer {
+      width: 200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      color: $dark;
+      @include tab {
         width: 90%;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        color: $dark;
-        @include tab{
-            width: 90%;
-          }
-        span{
-            text-align: center;
-            font-weight: lighter;
-            
-        }
-    }
-    .postTitle{
+      }
+      span {
         text-align: center;
-        letter-spacing: 4px;
-        font-size: 1.5rem;
-        color: $darker;
-        @include tab{
-            font-size: 1.4rem;
-          }
+        font-weight: lighter;
+      }
     }
-    .timeStamp{
-        width: 80%;
-        // border: 1px solid red;
-        text-align: right;
-        // font-weight: lighter;
-        font-style: italic;
-        color: $lighter;
-        @include tab{
-            font-size: 0.9rem;
-          }
+    .postTitle {
+      text-align: center;
+      letter-spacing: 4px;
+      font-size: 1.5rem;
+      color: $darker;
+      @include tab {
+        font-size: 1.4rem;
+      }
     }
-    .postContent{
-        text-align: center;
-        padding: 5px;
-        color: $dark;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+    .timeStamp {
+      width: 80%;
+      // border: 1px solid red;
+      text-align: right;
+      // font-weight: lighter;
+      font-style: italic;
+      color: $dark;
+      @include tab {
+        font-size: 0.9rem;
+      }
     }
+    .postContent {
+      text-align: center;
+      padding: 5px;
+      color: $darker;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+  &:hover{
+    .imageContainer{
+        filter: blur(2px);
+        opacity: 0.2;
+    }
+    .data{
+        display: block;
+    }
+    .postTitleTemporary{
+        display: none;
+    }
+  }
 }

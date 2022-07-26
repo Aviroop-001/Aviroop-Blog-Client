@@ -79,18 +79,6 @@ const Settings = () => {
                 <button className='delete' onClick={deleteUserHandler}>Delete Account</button>
             </div>
             <form className="settingsForm" onSubmit={updateHandler}>
-                <label htmlFor="">Profile Picture</label>
-                <div className="profilePictureSettings">
-                    <img src={user.profilepic} alt="" />
-                    <label htmlFor="fileInput">
-                        <PersonIcon />
-                    </label>
-                    <input type="file"
-                        id='fileInput' 
-                        style={{display: 'none'}}
-                        onChange={ (e)=> setfile(e.target.files[0]) }/>
-                </div>
-
                 <label htmlFor="" className='fieldLabels'>Username</label>
                 <input type="text"
                     className='inputFields'
@@ -98,7 +86,7 @@ const Settings = () => {
                     autoComplete='off'
                     autoFocus='on' 
                     onChange={ (e)=> setusername(e.target.value) }/>
-
+                
                 <label htmlFor="" className='fieldLabels'>Email</label>
                 <input type="text"
                     className='inputFields'

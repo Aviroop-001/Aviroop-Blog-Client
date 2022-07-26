@@ -56,59 +56,34 @@ const SinglePost = () => {
 
   return (
     <div className='SinglePost'>
-        <div className="imageContainer">
-            <img src={post.image} alt="" />
-        </div>
-        {editingMode ? (
-            <input
-            type="text"
-            autoComplete="off"
-            className="postTitleEdit"
-            autoFocus='on'
-            onChange={ (e)=> settitle(e.target.value) }
-          />
-        ): (
-            <div className="postTitle">
-            {post.title}
-            {post.author === user.username && 
+        <div className="postTitle">
+        {post.title}
+        {post.author === user.username && 
             <div className="buttons">
-                <IconButton onClick={(e) => {seteditingMode(true)}}>
-                    <EditIcon style={{color: "lime", opacity:"0.8"}} />
-                </IconButton>
                 <IconButton onClick={deleteHandler}>
-                    <DeleteOutlineIcon style={{color: "crimson", opacity:"1"}} />
+                <DeleteOutlineIcon style={{color: "crimson", opacity:"1"}} />
                 </IconButton>
             </div>
-            }
-        </div>
-        )
         }
-        <div className="postinfo">
-            <Link to={`/?user=${post.author}`} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>
-                <div className="authorName">{post.author}</div>
-            </Link>
-            <div className="timeStamp">
-                {/* DATE */}
-                {new Date(post.createdAt).toDateString()}
+        </div>
+        <div className="midContainer">
+            <div className="imageContainer">
+                <img src={post.image} alt="" />
+            </div>
+            <div className="postinfo">
+                By:-
+                <Link to={`/?user=${post.author}`} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>
+                    <div className="authorName">{post.author}</div>
+                </Link>
+                <div className="timeStamp">
+                    {/* DATE */}
+                    {new Date(post.createdAt).toDateString()}
+                </div>
             </div>
         </div>
-        {editingMode ? (
-            <textarea
-                type="text"
-                className="postDescEdit"
-                autoComplete="off"
-                onChange={ (e)=> setcontent(e.target.value) }
-            />
-        ) : (
-            <div className="postDesc">
-                {post.content}
-            </div>
-        )}
-        {editingMode &&
-            <IconButton className='updateButton' onClick={editHandler}>
-                Update
-            </IconButton>
-        }
+        <div className="postDesc">
+            {post.content}
+        </div>
     </div>
   )
 }
