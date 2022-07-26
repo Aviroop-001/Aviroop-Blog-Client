@@ -4,7 +4,6 @@ import CurrentPost from './Pages/CurrentPost/CurrentPost';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import About from './Pages/About/About';
-import Contact from './Pages/Contact/Contact';
 import Compose from './Pages/Compose/Compose';
 import Settings from './Pages/Settings/Settings';
 
@@ -33,7 +32,6 @@ function App() {
         <Route exact path='/compose' element={user ? <Compose/> : <Register/>} />
         <Route exact path='/settings' element={user ? <Settings/> : <Register/>} />
         <Route exact path='/about' element={user ? <About/> : <Register/>} />
-        <Route exact path='/contact' element={user ? <Contact/> : <Register/>} />
         <Route exact path='/post/:postID' element={<CurrentPost/>} />
       </Routes>
     </Router>

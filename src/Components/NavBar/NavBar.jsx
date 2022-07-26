@@ -1,6 +1,6 @@
 import './NavBar.scss';
 
-import {LinkedIn, Facebook, GitHub, Instagram, Search} from '@material-ui/icons';
+import { LinkedIn, Facebook, GitHub, Instagram } from '@material-ui/icons';
 import {Avatar, IconButton} from '@material-ui/core';
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
@@ -52,9 +52,6 @@ const NavBar = () => {
                 </li>
                 <li className="navItem">
                   <Link className='link' to="/about" onClick={()=>{setmenuactive(!menuactive)}}> ABOUT </Link>
-                </li>
-                <li className="navItem">
-                  <Link className='link' to="/contact" onClick={()=>{setmenuactive(!menuactive)}}> CONTACT </Link>
                 </li>
                 <li className="navItem">
                   <Link className='link' to="/compose" onClick={()=>{setmenuactive(!menuactive)}}> COMPOSE </Link>
