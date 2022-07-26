@@ -15,44 +15,54 @@
             }
         }
     }
-    .midContainer{
-        border: red 1px solid;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        justify-content: center;
+    
     .imageContainer{
         // border: red 1px solid;
-        width: 70%;
+        width: 100%;
+        height: 50vh;
         text-align: center;
-        // margin: 2rem auto;
         img{
-            height: 40%;
-            width: 60%;
-            // margin: 2rem auto;
+            margin: auto 1px;
+            height: 100%;
+            width: 80%;
             object-fit: cover;
-            border-radius: 1rem;
+            border-radius: 0.4rem;
         }
     }
     .postinfo{
+        // border: red 1px solid;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         flex-direction: column;
         color: wheat;
+        padding-left: 3rem;
+        margin: 1rem;
         .authorName{
-            // margin: 1rem;
-            letter-spacing: 2px;
-            font-size: 1.6rem;
+            letter-spacing: 1px;
+            font-size: 1.7rem;
             color: $dark;
-            cursor: pointer;
         }
         .timeStamp{
-            // margin: 1rem;  
             color: $lighter;
         }
-    }
+        .morePosts{
+            // border: yellow 1px solid;
+            color: wheat;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            align-self: flex-end;
+            margin-right: 2rem;
+            font-size: 1.2rem;
+            .authorNameMorePosts{
+                display: inline-block;
+                letter-spacing: 2px;
+                font-size: 2rem;
+                color: $darker;
+                cursor: pointer;
+                font-style: italic;
+            }
+        }
     }
     .postDesc{
         text-align: center;

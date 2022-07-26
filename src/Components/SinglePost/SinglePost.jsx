@@ -66,20 +66,20 @@ const SinglePost = () => {
             </div>
         }
         </div>
-        <div className="midContainer">
             <div className="imageContainer">
                 <img src={post.image} alt="" />
             </div>
-            <div className="postinfo">
-                By:-
-                <Link to={`/?user=${post.author}`} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>
-                    <div className="authorName">{post.author}</div>
-                </Link>
+        <div className="postinfo">
+                By:- <div className="authorName">{post.author}</div>
                 <div className="timeStamp">
                     {/* DATE */}
                     {new Date(post.createdAt).toDateString()}
                 </div>
-            </div>
+                <div className="morePosts">
+                    More posts by &nbsp; <Link to={`/?user=${post.author}`} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>
+                    <div className="authorNameMorePosts">{post.author}</div>
+                </Link>
+                </div>
         </div>
         <div className="postDesc">
             {post.content}
