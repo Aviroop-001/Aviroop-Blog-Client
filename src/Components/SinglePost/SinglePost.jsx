@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import API from '../../api';
+import { Box, Image, Tooltip } from '@chakra-ui/react';
 
 const SinglePost = () => {
 
@@ -55,36 +56,74 @@ const SinglePost = () => {
     }
 
   return (
-    <div className='SinglePost'>
-        <div className="postTitle">
+    <Box className='SinglePost'>
+        <Box className="postTitle"
+        textAlign='center'
+        fontSize='2.5rem'
+        letterSpacing='3px'
+        margin='1rem'>
         {post.title}
         {post.author === user.username && 
-            <div className="buttons">
-                <IconButton onClick={deleteHandler}>
-                <DeleteOutlineIcon style={{color: "crimson", opacity:"1"}} />
-                </IconButton>
-            </div>
+            <Box className="buttons"
+            float='right'>
+                <Tooltip hasArrow label='Delete Post' bg='red.600' color='wheat'>
+                    <IconButton onClick={deleteHandler}>
+                        <DeleteOutlineIcon style={{color: "crimson", opacity:"1"}} />
+                    </IconButton>
+                </Tooltip>
+            </Box>
         }
-        </div>
-            <div className="imageContainer">
-                <img src={post.image} alt="" />
-            </div>
-        <div className="postinfo">
-                By:- <div className="authorName">{post.author}</div>
-                <div className="timeStamp">
+        </Box>
+            <Box className="imageContainer"
+            width='100%'
+            height='50vh'
+            textAlign='center'>
+                <Image src={post.image} alt="" 
+                height='100%'
+                width='80%'
+                objectFit='contain'
+                margin='0px auto'
+                borderRadius='0.4rem'/>
+            </Box>
+        <Box className="postinfo"
+        display='flex'
+        justifyContent='space-between'
+        flexDirection='column'
+        paddingLeft='3rem'
+        margin='1rem'>
+                By:- <Box className="authorName"  fontSize='1.7rem' letterSpacing='4px'>
+                        {post.author}
+                    </Box>
+                <Box className="timeStamp">
                     {/* DATE */}
                     {new Date(post.createdAt).toDateString()}
-                </div>
-                <div className="morePosts">
+                </Box>
+                <Box className="morePosts"
+                textAlign='center'
+                display='flex'
+                alignItems='center'
+                alignSelf='flex-end'
+                marginRight='2rem'
+                fontSize='1.2rem'>
                     More posts by &nbsp; <Link to={`/?user=${post.author}`} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>
-                    <div className="authorNameMorePosts">{post.author}</div>
+                    <Tooltip hasArrow label='See more posts by author' bg='green.600' color='wheat'>
+                    <Box className="authorNameMorePosts"
+                    display='inline-block'
+                    letterSpacing='2px'
+                    fontSize='2rem'
+                    cursor='pointer'
+                    fontStyle='italic'>{post.author}</Box>
+                    </Tooltip>
                 </Link>
-                </div>
-        </div>
-        <div className="postDesc">
+                </Box>
+        </Box>
+        <Box className="postDesc"
+        textAlign='center'
+        margin='1rem'
+        fontSize='1.1rem'>
             {post.content}
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 

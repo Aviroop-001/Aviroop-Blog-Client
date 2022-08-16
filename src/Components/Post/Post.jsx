@@ -1,30 +1,76 @@
 import { Link } from 'react-router-dom';
+import { Box, Image, Text } from '@chakra-ui/react';
 import './Post.scss';
 
 const Post = ({post}) => {
 
   return (
-    <div className='Post'>
+    <Box className='Post'
+    width={{ base:'70%', md:'40%'}}
+    margin='5px 10px'
+    position='relative'>
       <Link to={`/post/${post._id}`} style={{textDecoration:"none", color:"black"}}>
-        <div className="imageContainer">
-          <img className='postImage' src={post.image} alt="" />
-        </div>
+        <Box className='imageContainer'
+        width='100%'
+        textAlign='center'>
+          <Image 
+          height='100%'
+          width='100%'
+          opacity='0.5'
+          textAlign='center'
+          src={post.image} alt="" />
+        </Box>
         
-          <div className="postTitleTemporary">{post.title}</div>
-        <div className="data">
-          <Link to={`/post/${post._id}`} style={{textDecoration:"none", color:"black"}}>
-            <div className="postTitle">{post.title}</div>
-          </Link>
-          <div className="categoryContainer">
+        <Text className='postTitleTemporary'
+        position='absolute'
+        bottom='10px'
+        left='10px'
+        textAlign='center'
+        letterSpacing='4px'
+        fontStyle='italic'
+        fontSize={{base:'1.4rem', md:'2rem'}}>
+          {post.title}
+        </Text>
+        <Box className='data'
+        display='none'
+        position='absolute'
+        bottom='10px'
+        left='0'
+        width='100%'>
+          <Text className='postTitle'
+          textAlign='center'
+          letterSpacing='0.6rem'
+          fontStyle='bold'
+          fontSize={{base:'1.4rem', md:'1.7rem'}}>
+            {post.title}
+          </Text>
+          <Box className='categoryContainer'
+          width={{base: '90%', md: '200px'}}
+          margin='0 auto'
+          display='flex'
+          flexWrap='wrap'
+          justifyContent='space-evenly'>
             {post.categories.map((c) =>(
               <span key ={Math.floor((Math.random()*10000)+1)} className="categories">{c}</span>
             ))}
-          </div>
-          <div className="timeStamp">{new Date(post.createdAt).toDateString()}</div>
-          <div className="postContent">{post.content}</div>
-        </div>
+          </Box>
+          <Box className='dateContainer'
+          width='80%'
+          textAlign='right'
+          fontStyle='italic'
+          fontSize={{base:'0.9rem'}}>
+            {new Date(post.createdAt).toDateString()}
+          </Box>
+          <Box className="postContent"
+          textAlign='center'
+          padding='5px'
+          overflow='hidden'
+          textOverflow='ellipsis'>
+            {post.content}
+          </Box>
+        </Box>
       </Link>
-    </div>
+    </Box>
 
   )
 }

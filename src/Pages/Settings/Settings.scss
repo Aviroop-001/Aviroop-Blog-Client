@@ -28,6 +28,10 @@
                 padding: 1rem;
                 border-radius: 0.5rem;
                 float: right;
+                &:hover{
+                    background-color: crimson;
+                    color: black;
+                }
             }
         }
         .settingsForm{

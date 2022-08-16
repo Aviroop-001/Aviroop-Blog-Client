@@ -5,6 +5,8 @@ import SideBar from '../../Components/SideBar/SideBar';
 import Posts from '../../Components/Posts/Posts';
 import API from '../../api';
 import { useLocation } from 'react-router-dom';
+import { Box } from "@chakra-ui/react"
+// import '../../global.scss'
 
 const Home = () => {
 
@@ -23,13 +25,19 @@ const Home = () => {
   
 
   return (
-    <div className='Home'>
+    <Box className='Home' 
+    display='flex'
+    flexDirection='column'>
         <Header/>
-        <div className="content">
+        <Box className="content" 
+        display='flex'
+        flexDirection='column'
+        marginTop='2rem'
+        backgroundColor='#222629'>
           <Posts posts={posts}/>
           <SideBar/>
-        </div>
-    </div>
+        </Box>
+    </Box>
   )
 }
 

@@ -3,17 +3,7 @@
 .Compose{
   background-color: $lightest;
     .imageContainer{
-        // border: red 1px solid;
-        // margin: 1rem;
-        margin-top: 3rem;
-        text-align: center;
         color: $dark;
-        img{
-            border-radius: 10px;
-            height: 15rem;
-            width: 80%;
-            object-fit: cover;
-        }
     }
     .postComposer{
         // border: 1px yellow solid;
@@ -29,16 +19,11 @@
 
         //TODO: CSS copied from online resource
         .categoryContainer {
+          .checkBox{
+            color: $darker;
+            cursor: pointer;
+          }
           #catsBtn{
-            position: absolute;
-            bottom: 2rem;
-            right: 5rem;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            text-align: center;
-            font-size: 1.1rem;
-            padding: 0.2rem 0.4rem;
             background-color: $darker;
             &:hover{
               background-color: $dark;
@@ -310,11 +295,5 @@
               right: 2rem;
             }
         }
-        // #catsBtn{
-        //   bottom: 22rem;
-        //   right: 5rem;
-        //   font-size: 1.1rem;
-        //   padding: 0.2rem 0.4rem;
-        // }
     }
 }
