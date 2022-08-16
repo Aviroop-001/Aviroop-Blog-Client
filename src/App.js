@@ -15,6 +15,8 @@ import {
 import { useContext } from 'react';
 import {Context} from './context/Context';
 
+import './App.scss';
+
 function App() {
 
   const {user} = useContext(Context);
@@ -32,7 +34,7 @@ function App() {
         <Route exact path='/compose' element={user ? <Compose/> : <Register/>} />
         <Route exact path='/settings' element={user ? <Settings/> : <Register/>} />
         <Route exact path='/about' element={user ? <About/> : <Register/>} />
-        <Route exact path='/post/:postID' element={<CurrentPost/>} />
+        <Route exact path='/post/:postID' element={user ? <CurrentPost/> : <Login/>} />
       </Routes>
     </Router>
 
