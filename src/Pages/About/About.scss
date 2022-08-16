@@ -3,17 +3,10 @@
 .About{
     // border: red 1px solid;
     color: $darker;
-    margin: 1rem 4rem;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
     .aboutApp{
         .title{
-            text-align: center;
-            font-size: 1.4rem;
-            text-decoration: underline;
         }
         .description{
-            padding: 1rem 8rem;
             span{
                 font-size: 1.5rem;
                 margin: 5px 0.5rem;
@@ -36,9 +29,6 @@
         }
     }
     .aboutMe{
-        text-align: center;
-        margin: 2rem;
-        margin-top: 5rem;
         color: $light;
         span{
             color: $darker;
