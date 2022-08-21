@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 import swal from "sweetalert";
 import Axios from "axios";
 import API from "../../api";
-import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip, Textarea } from "@chakra-ui/react";
 
 const Compose = () => {
   //States
@@ -83,12 +83,7 @@ const Compose = () => {
   };
 
   return (
-    <Box className="Compose" height="calc(100vh - 4rem)">
-      {imageURL && (
-        <Box className="imageContainer" marginTop="3rem" textAlign="center">
-          {fileName}
-        </Box>
-      )}
+    <Box className="Compose">
       <form
         className="postComposer"
         method="post"
@@ -96,15 +91,22 @@ const Compose = () => {
       >
         <Tooltip hasArrow label='Select .jpeg/.png file'>
         <label htmlFor="inputFile">
-          <AddCircleOutlineIcon
-            style={{ color: "#86C232", fontSize: "3rem", margin: "2rem" }}
+          <Box border='1px dashed grey' padding='3rem 7rem' marginTop='3rem'>
+          {imageURL && (
+        <Box className="imageContainer" textAlign="center">
+          {fileName}
+        </Box>
+      )}
+          <AddCircleOutlineIcon 
+            style={{ color: "#86C232", fontSize: "3rem"}}
           />
+          </Box>
         </label>
         </Tooltip>
 
         {/* //TODO: The categories are selected here */}
-        <CheckboxGroup colorScheme="red">
-          <Box display="flex" flexWrap="wrap" width="70%" height="35%" alignItems='center'>
+        <CheckboxGroup colorScheme="red" marginTop='3rem'>
+          <Box display="flex" flexWrap="wrap" width="70%" height="35%" alignItems='center' marginTop='3rem'>
             <Checkbox
               className="checkBox"
               width="20%"
@@ -266,19 +268,37 @@ const Compose = () => {
             });
           }}
         />
-        <input
+        <Textarea
           type="text"
           id="inputTitle"
           placeholder="Title"
           autoFocus="on"
           autoComplete="off"
+          colorScheme='teal'
+          fontSize='1.2rem'
+            padding='0.5rem'
+            border='none'
+            outline='none'
+            width='50%'
+            marginTop='4rem'
+            textAlign='center'
+            borderRadius='5px'
+            letterSpacing='3px'
           onChange={(e) => settitle(e.target.value)}
         />
-        <textarea
+        <Textarea
           type="text"
           id="inputContent"
+          colorScheme='teal'
           placeholder="Write Blog"
           autoComplete="off"
+          height='17rem'
+          borderRadius='5px'
+            padding='1rem'
+            border='none'
+            outline='none'
+            width='60%'
+            margin='1rem'
           onChange={(e) => setcontent(e.target.value)}
         />
 
