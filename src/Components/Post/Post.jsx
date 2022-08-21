@@ -23,7 +23,7 @@ const Post = ({post}) => {
         
         <Text className='postTitleTemporary'
         position='absolute'
-        bottom='10px'
+        bottom='40px'
         left='10px'
         textAlign='center'
         letterSpacing='4px'
@@ -31,6 +31,18 @@ const Post = ({post}) => {
         fontSize={{base:'1.4rem', md:'2rem'}}>
           {post.title}
         </Text>
+        <Box className='categoryContainerTemporary'
+        position='absolute'
+        bottom='10px'
+        left='10px'
+          width={{base: '90%', md: '400px'}}
+          margin='0 auto'
+          display='flex'
+          flexWrap='wrap'>
+            {post.categories.map((c) =>(
+              <span key ={Math.floor((Math.random()*10000)+1)} className="categories">{c}</span>
+            ))}
+          </Box>
         <Box className='data'
         display='none'
         position='absolute'
@@ -45,11 +57,10 @@ const Post = ({post}) => {
             {post.title}
           </Text>
           <Box className='categoryContainer'
-          width={{base: '90%', md: '200px'}}
+          width={{base: '90%', md: '400px'}}
           margin='0 auto'
           display='flex'
-          flexWrap='wrap'
-          justifyContent='space-evenly'>
+          flexWrap='wrap'>
             {post.categories.map((c) =>(
               <span key ={Math.floor((Math.random()*10000)+1)} className="categories">{c}</span>
             ))}

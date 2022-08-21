@@ -6,15 +6,30 @@
   .postTitleTemporary{
     color: $darker;
   }
+  .categoryContainerTemporary {
+    color: wheat;
+    span {
+      background-color: rgb(54, 54, 54);
+      margin: 0px 5px;
+      min-width:max-content;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 5px;
+    }
+  }
   .data {
     .postTitle{
       color: $darker;
     }
     .categoryContainer {
-      color: $dark;
+      color: wheat;
       span {
+        background-color: rgb(54, 54, 54);
+        margin: 0px 5px;
+        border-radius: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
         text-align: center;
-        font-weight: lighter;
       }
     }
     .dateContainer{
@@ -37,6 +52,9 @@
     }
     .postTitleTemporary{
         display: none;
+    }
+    .categoryContainerTemporary{
+      display: none;
     }
   }
 }
