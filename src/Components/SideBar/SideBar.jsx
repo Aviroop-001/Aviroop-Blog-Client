@@ -1,10 +1,5 @@
 import "./SideBar.scss";
 
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import { IconButton } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import API from '../../api';

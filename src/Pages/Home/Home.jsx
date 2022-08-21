@@ -6,6 +6,7 @@ import Posts from '../../Components/Posts/Posts';
 import API from '../../api';
 import { useLocation } from 'react-router-dom';
 import { Box } from "@chakra-ui/react"
+import TagSelector from '../../Components/TagSelector';
 // import '../../global.scss'
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
     display='flex'
     flexDirection='column'>
         <Header/>
+        <TagSelector />
         <Box className="content" 
         display='flex'
         flexDirection='column'
