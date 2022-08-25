@@ -1,81 +1,22 @@
 @import '../../global.scss';
 
 .SideBar{
-    // flex: 3;
     background-color: $lighter;
     color: $darker;
-    padding: 2rem 1rem;
-    // border-radius: 10px;
-    margin: 2rem 0;
-    // box-shadow: 1px 2px 5px 2px $dark;
-    @include tab{
-        flex: 2;
-    }
-    // @include avgmobile{
-    //     display: none;
-    // }
-    // border: yellowgreen 1px solid;
-    .sidebarTitle{
-        font-family: 'Poppins';
-        text-align: center;
-        margin: 1rem 0;
-        @include tab{
-            margin: 0.5rem 0;
-          }
-    }
-    img{
-        height: 10rem;
-        width: 18rem;
-        margin: 1rem;
-        @include tab{
-            height: 8rem;
-            width: 16rem;
-            margin: 5px;
-        }
-    }
-    .sidebarContent{
-        font-family: 'Poppins';
-        margin: 1.5rem 5px;
-        @include tab{
-            margin: 0.5rem 1px;
-          }
-    }
-    .sidebarCategoriesContainer{
-        .sidebarCategoriesTitle{
-            font-family: 'Poppins';
-            text-align: center;
-            margin: 1rem 0;
-            @include tab{
-                margin: 0.5rem 0;
-              }
-        }
-        .sidebarCategoriesList{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            li.sidebarCategory{
-                width: 45%;
-                text-align: center;
-                list-style: none;
-                margin: 1rem 0;
-                color: $darker;
-            }
-        }
-    }
     .aboutMe{
-        text-align: center;
-        margin: 2rem;
-        margin-top: 5rem;
-        color: rgb(15, 16, 15);
         span{
             color: $darker;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
+            letter-spacing: 3px;
             font-family: Poppins;
         }
         p{
             color: $dark;
-            font-size: 1.1rem;
+            display: block;
+            letter-spacing: 1px;
+            font-family: exo;
+            font-size: 1.2rem;
         }
     }
 }
