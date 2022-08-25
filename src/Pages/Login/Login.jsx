@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 import { useContext, useRef } from 'react';
 import {Context} from '../../context/Context';
+import {useToast} from '@chakra-ui/react';
 import API from '../../api';
-import swal from 'sweetalert';
 
 const Login = () => {
 
@@ -15,6 +15,9 @@ const Login = () => {
   const passwordRef = useRef();
   //TODO: we're using context to store the context object so we can use it globally(in file). We also destructure the object
   const {user, dispatch, isFetching} = useContext(Context);
+
+//functions
+  const toast= useToast();
 
   const handleSubmit= async (e) =>{
     e.preventDefault();
@@ -30,17 +33,25 @@ const Login = () => {
       });
       //TODO: Since we posted the data successfully, we can now dispatch the LOGIN_SUCCESS object predefined in REDUCER
       dispatch({type : "LOGIN_SUCCESS", payload: res.data});
-      swal({
-        title: "Logged in Successfully",
-        icon: "success",
+      toast({
+        title: 'Welcome _/\_',
+        description: "Have fun!!!",
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
       });
     } 
     catch (err) {
       //TODO: An error seems to have happened, maybe password was wrong or user has not been registered yet. So here we dispatch the LOGIN_FAILURE package object
       dispatch({type : "LOGIN_FAILURE"});
-      swal({
-        title: "Ooops! Something went wrong",
-        icon: "error",
+      toast({
+        title: 'Shit happens :(',
+        description: "Might be your fault!! Check the credentials.",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
       });
     }
   };

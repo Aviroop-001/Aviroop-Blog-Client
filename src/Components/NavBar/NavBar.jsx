@@ -2,8 +2,7 @@ import './NavBar.scss';
 
 import { LinkedIn, Facebook, GitHub, Instagram, ExitToAppOutlined, Add, Info, Home } from '@material-ui/icons';
 import {Avatar, IconButton} from '@material-ui/core';
-import {Tooltip} from '@chakra-ui/react'
-import swal from 'sweetalert';
+import {Tooltip, useToast} from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 
 import {
@@ -15,24 +14,45 @@ import {Context} from '../../context/Context';
 
 const NavBar = () => {
 
+  //states
   const {user, dispatch} = useContext(Context);
+  const [menuactive, setmenuactive] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  //functions
+  const toast = useToast();
 
   const logoutHandler = () =>{
-    console.log("logout tried");
+    try {
+      console.log("logout tried");
     dispatch({type : "LOGOUT"});
-    console.log("logout success")
-    swal({
-      title: "You logged out",
-      icon: "success",
+    console.log("logout success");
+    toast({
+      title: 'Logged out!!!',
+      description: "Log out successful. You can login again",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position: 'top',
     });
+    } catch (err) {
+      console.log(err);
+      toast({
+        title: 'Something went wrong :(',
+        description: "Couldn't log out. Try again.",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
+      });
+    }
+    
   }
 
-  const [menuactive, setmenuactive] = useState(false);
   const toggleNav = () =>{
     setmenuactive(!menuactive);
   }
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);

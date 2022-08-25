@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 import swal from "sweetalert";
 import Axios from "axios";
 import API from "../../api";
-import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip, Textarea } from "@chakra-ui/react";
+import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip, Textarea} from "@chakra-ui/react";
 
 const Compose = () => {
   //States
@@ -33,9 +33,25 @@ const Compose = () => {
         .then((res) => {
           setimageURL(res.data.url.toString());
           console.log("Image uploaded successfully");
+          toast({
+            title: 'Image Uploaded successfully',
+            description: "Your image is in the cloud :O",
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+            position: 'top',
+          });
         })
         .catch((err) => {
           console.log(err);
+          toast({
+            title: 'Image uploading crashed :(',
+            description: "Couldn't connect to cloud...",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
+            position: 'top',
+          });
         });
     } else {
       console.log("file must be jpeg/png");
@@ -72,13 +88,25 @@ const Compose = () => {
     try {
       const res = await API.post("/posts", currPost);
       console.log("Posting Successful !!!");
-      swal({
-        title: "Posted Successfully ;>",
-        icon: "success",
+      toast({
+        title: 'Blog posted successfully',
+        description: "Redirecting to your newly posted blog :)",
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
       });
       window.location.replace("/post/" + res.data._id);
     } catch (er) {
       console.log(er);
+      toast({
+        title: 'Blog posting Failed',
+        description: "Shit happens :,)",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
+      });
     }
   };
 

@@ -1,7 +1,7 @@
 import "./Register.scss";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useState } from "react";
-import swal from 'sweetalert';
+import {useToast} from '@chakra-ui/react';
 import API from '../../api';
 
 const Register = () => {
@@ -9,6 +9,9 @@ const Register = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [error, seterror] = useState(false);
+
+//functions
+  const toast= useToast();
 
   const handleSubmit= async (e) =>{
     e.preventDefault();
@@ -19,13 +22,25 @@ const Register = () => {
           password
         })
         //TODO: if user successfully registered, relocate from /register to /login
-        swal({
-          title: "Registered Successfully",
-          icon: "success",
+        toast({
+          title: 'Welcome new User',
+          description: "It's your home!!!",
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+          position: 'top',
         });
         registerUser.data && window.location.replace("/login")
     } catch (err) {
       seterror(true);
+      toast({
+        title: 'Shit happens :(',
+        description: "Might be your fault!! Try AGAIN.",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+        position: 'top',
+      });
     }
     
   }

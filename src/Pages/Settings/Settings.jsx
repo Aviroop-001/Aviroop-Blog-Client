@@ -7,6 +7,7 @@ import {Context} from '../../context/Context';
 import { IconButton } from '@material-ui/core';
 import API from '../../api';
 import swal from 'sweetalert';
+import {useToast} from '@chakra-ui/react';
 
 
 const Settings = () => {
@@ -18,6 +19,8 @@ const Settings = () => {
     const [email, setemail] = useState("");
 
     //functions
+    const toast= useToast();
+
     const deleteUserHandler = async() =>{
         try {
             const res = await API.delete(`/user/${user._id}`);
@@ -61,14 +64,28 @@ const Settings = () => {
         try {
           const res = await API.put(`/user/${user._id}`, updatedUser);
           console.log('User Updated Successfully !!!');
-          swal({
-            title: "Account Updated Successfully",
-            icon: "success",
+          toast({
+            title: 'Account Updated Successfully',
+            description: "Enjoy :)",
+            status: 'success',
+            duration: 4000,
+            isClosable: true,
+            position: 'top',
           });
         //   dispatch({type : "LOGIN_SUCCESS"});
           window.location.replace("/");
         }
-        catch (error) {}
+        catch (error) {
+          console.log(error);
+          toast({
+            title: 'Something went wrong',
+            description: "OOOOOOps....",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
+            position: 'top',
+          });
+        }
     };
 
   return (
