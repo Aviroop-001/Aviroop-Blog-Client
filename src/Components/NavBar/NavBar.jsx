@@ -1,7 +1,8 @@
 import './NavBar.scss';
 
-import { LinkedIn, Facebook, GitHub, Instagram } from '@material-ui/icons';
+import { LinkedIn, Facebook, GitHub, Instagram, ExitToAppOutlined, Add, Info, Home } from '@material-ui/icons';
 import {Avatar, IconButton} from '@material-ui/core';
+import {Tooltip} from '@chakra-ui/react'
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
 
@@ -48,16 +49,32 @@ const NavBar = () => {
         <div className="navItems">
             <ul className="navList">
                 <li className="navItem">
-                  <Link className='link' to="/" onClick={()=>{setmenuactive(!menuactive)}}> HOME </Link>
+                  <Link className='link' to="/" onClick={()=>{setmenuactive(!menuactive)}}>
+                  <Tooltip hasArrow label='Home sweet home' fontSize='15px' bg='yellow.200' color='black'>
+                    <IconButton><Home style={{color:'#86C232', fontSize:'2rem'}}/></IconButton>
+                    </Tooltip>
+                  </Link>
                 </li>
                 <li className="navItem">
-                  <Link className='link' to="/about" onClick={()=>{setmenuactive(!menuactive)}}> ABOUT </Link>
+                  <Link className='link' to="/about" onClick={()=>{setmenuactive(!menuactive)}}>
+                  <Tooltip hasArrow label='About me' fontSize='15px' bg='green.200' color='black'>
+                    <IconButton><Info style={{color:'#86C232', fontSize:'2rem'}}/></IconButton>
+                  </Tooltip>
+                  </Link>
                 </li>
                 <li className="navItem">
-                  <Link className='link' to="/compose" onClick={()=>{setmenuactive(!menuactive)}}> COMPOSE </Link>
+                  <Link className='link' to="/compose" onClick={()=>{setmenuactive(!menuactive)}}>
+                  <Tooltip hasArrow label='Compose new Post' fontSize='15px' bg='blue.200' color='black'>
+                    <IconButton><Add style={{color:'#86C232', fontSize:'2rem'}}/></IconButton>
+                  </Tooltip>
+                  </Link>
                 </li>
                 {user && <li className="navItem" onClick={logoutHandler}>
-                  <Link className='link' to="/"> LOGOUT </Link>
+                  <Link className='link' to="/"> 
+                  <Tooltip hasArrow label='Logout' fontSize='15px' bg='red.200' color='black'>
+                    <IconButton><ExitToAppOutlined style={{color:'#86C232', fontSize:'2rem'}}/></IconButton>
+                  </Tooltip>
+                  </Link>
                 </li>}
             </ul>
         </div>

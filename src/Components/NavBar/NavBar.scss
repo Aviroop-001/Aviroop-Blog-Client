@@ -28,11 +28,11 @@
     }
     .navItems {
       // border: 1px red solid;
-      flex: 4;
+      flex: 3;
       .navList {
         // border: 1px green dashed;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         list-style: none;
         margin: auto 0px;
         .navItem {
@@ -164,10 +164,10 @@
       .navList {
         padding: 0;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         flex-direction: column;
         .navItem {
-          margin: 1rem 0.5rem;
+          margin: 0.3rem 0.5rem;
         }
       }
     }
