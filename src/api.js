@@ -5,5 +5,7 @@ export default axios.create({
   // baseURL: `http://localhost:5000/api/`
 
   // //! LIVE SERVER
-  baseURL: `https://aviroop-blog-api.herokuapp.com/api`
+  // baseURL: `https://aviroop-blog-api.herokuapp.com/api`
+  
+  baseURL: `https://aviroop-blog-api.onrender.com/api`
 });
