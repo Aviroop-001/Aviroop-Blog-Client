@@ -5,8 +5,9 @@ import SideBar from '../../Components/SideBar/SideBar';
 import Posts from '../../Components/Posts/Posts';
 import API from '../../api';
 import { useLocation } from 'react-router-dom';
-import { Box } from "@chakra-ui/react"
+import { Box, Center } from "@chakra-ui/react"
 import TagSelector from '../../Components/TagSelector';
+import { Progress } from "@chakra-ui/react";
 // import '../../global.scss'
 
 const Home = () => {
@@ -26,21 +27,37 @@ const Home = () => {
   
 
   return (
-    <Box className='Home' 
-    display='flex'
-    flexDirection='column'>
-        <Header/>
-        <TagSelector />
-        <Box className="content" 
-        display='flex'
-        flexDirection='column'
-        marginTop='2rem'
-        backgroundColor='#222629'>
-          <Posts posts={posts}/>
-          <SideBar/>
-        </Box>
+    <Box className="Home" display="flex" flexDirection="column">
+      <Header />
+      <TagSelector />
+      <Box
+        className="content"
+        display="flex"
+        flexDirection="column"
+        marginTop="2rem"
+        backgroundColor="#222629"
+      >
+        {posts.length ? (
+          <Posts posts={posts} />
+        ) : (
+          <Center height="10rem" width="100%" color="white">
+            <Progress
+              size="xl"
+              hasStripe
+              isIndeterminate
+              colorScheme="red"
+              backgroundColor="#b8db86"
+              height="4px"
+              width="60%"
+              borderRadius='10px'
+            />
+          </Center>
+        )}
+
+        <SideBar />
+      </Box>
     </Box>
-  )
+  );
 }
 
 export default Home
