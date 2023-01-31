@@ -76,11 +76,11 @@ const SinglePost = () => {
         </Box>
             <Box className="imageContainer"
             width='100%'
-            height='50vh'
+            height={{base: '30vh', md: '50vh'}}
             textAlign='center'>
                 <Image src={post.image} alt="" 
                 height='100%'
-                width='80%'
+                width='90%'
                 objectFit='contain'
                 margin='0px auto'
                 borderRadius='0.4rem'/>

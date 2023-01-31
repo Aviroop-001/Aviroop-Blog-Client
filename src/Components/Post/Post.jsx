@@ -6,7 +6,7 @@ const Post = ({post}) => {
 
   return (
     <Box className='Post'
-    width={{ base:'70%', md:'40%'}}
+    width={{ base:'90%', md:'40%'}}
     margin='5px 10px'
     position='relative'>
       <Link to={`/post/${post._id}`} style={{textDecoration:"none", color:"black"}}>
@@ -23,8 +23,8 @@ const Post = ({post}) => {
         
         <Text className='postTitleTemporary'
         position='absolute'
-        bottom='40px'
-        left='10px'
+        top='2px'
+        left='5px'
         textAlign='center'
         letterSpacing='4px'
         fontStyle='italic'
@@ -34,7 +34,7 @@ const Post = ({post}) => {
         <Box className='categoryContainerTemporary'
         position='absolute'
         bottom='10px'
-        left='10px'
+        left='5px'
           width={{base: '90%', md: '400px'}}
           margin='0 auto'
           display='flex'

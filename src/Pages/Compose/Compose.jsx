@@ -117,27 +117,35 @@ const Compose = () => {
         method="post"
         onSubmit={(e) => composeHandler(e)}
       >
-        <Tooltip hasArrow label='Select .jpeg/.png file'>
-        <label htmlFor="inputFile">
-          <Box border='1px dashed grey' padding='3rem 7rem' marginTop='3rem'>
-          {imageURL && (
-        <Box className="imageContainer" textAlign="center">
-          {fileName}
-        </Box>
-      )}
-          <AddCircleOutlineIcon 
-            style={{ color: "#86C232", fontSize: "3rem"}}
-          />
-          </Box>
-        </label>
+        <Tooltip hasArrow label="Select .jpeg/.png file">
+          <label htmlFor="inputFile">
+            <Box border="1px dashed grey" padding="3rem 7rem" marginTop="3rem">
+              {imageURL && (
+                <Box className="imageContainer" textAlign="center">
+                  {fileName}
+                </Box>
+              )}
+              <AddCircleOutlineIcon
+                style={{ color: "#86C232", fontSize: "3rem" }}
+              />
+            </Box>
+          </label>
         </Tooltip>
 
         {/* //TODO: The categories are selected here */}
-        <CheckboxGroup colorScheme="red" marginTop='3rem'>
-          <Box display="flex" flexWrap="wrap" width="70%" height="35%" alignItems='center' marginTop='3rem'>
+        <CheckboxGroup colorScheme="red" marginTop="3rem">
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            width={{ base: "85%", md: "70%" }}
+            height={{ base: "25vh", md: "15vh" }}
+            alignItems="center"
+            justifyContent='center'
+            marginTop="3rem"
+          >
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Technology"
               name="category1"
               value="Technology"
@@ -148,7 +156,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Science"
               name="category2"
               value="Science"
@@ -159,7 +167,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Pshycology"
               name="category3"
               value="Pshycology"
@@ -170,7 +178,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Finance"
               name="category4"
               value="Finance"
@@ -181,7 +189,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "50%", md: "20%" }}
               id="Environment"
               name="category5"
               value="Environment"
@@ -192,7 +200,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Infrastructure"
               name="category6"
               value="Infrastructure"
@@ -203,7 +211,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="LifeStyle"
               name="category7"
               value="LifeStyle"
@@ -214,7 +222,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Movies"
               name="category8"
               value="Movies"
@@ -225,7 +233,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Music"
               name="category9"
               value="Music"
@@ -236,7 +244,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Sports"
               name="category10"
               value="Sports"
@@ -247,7 +255,7 @@ const Compose = () => {
             </Checkbox>
             <Checkbox
               className="checkBox"
-              width="20%"
+              width={{ base: "40%", md: "20%" }}
               id="Politics"
               name="category10"
               value="Politics"
@@ -259,18 +267,18 @@ const Compose = () => {
           </Box>
           <Button
             variant="ghost"
-            backgroundColor='#474B4F'
-            color='#86C232'
-            fontSize='1.2rem'
-            padding='0.4rem 0.6rem'
-            _hover={{backgroundColor: '#86C232', color:'green.900'}}
+            backgroundColor="#474B4F"
+            color="#86C232"
+            fontSize="1.2rem"
+            padding="0.4rem 0.6rem"
+            _hover={{ backgroundColor: "#86C232", color: "green.900" }}
             onClick={(e) => {
               setcategories(checkedBoxes);
               toast({
-                title: 'Tags set successfully',
+                title: "Tags set successfully",
                 description: "these tags will help users filter the posts",
-                position: 'top',
-                status: 'success',
+                position: "top",
+                status: "success",
                 duration: 3000,
                 isClosable: true,
               });
@@ -285,12 +293,12 @@ const Compose = () => {
           id="inputFile"
           autoComplete="off"
           style={{ display: "none" }}
-          onChange={(e) =>{
+          onChange={(e) => {
             imageUploadHandler(e.target.files[0]);
             toast({
               title: "Post Image uploaded successfully",
-              position: 'top',
-              status: 'success',
+              position: "top",
+              status: "success",
               duration: 3000,
               isClosable: true,
             });
@@ -302,31 +310,33 @@ const Compose = () => {
           placeholder="Title"
           autoFocus="on"
           autoComplete="off"
-          colorScheme='teal'
-          fontSize='1.2rem'
-            padding='0.5rem'
-            border='none'
-            outline='none'
-            width='50%'
-            marginTop='4rem'
-            textAlign='center'
-            borderRadius='5px'
-            letterSpacing='3px'
+          boxShadow="0px 0px 4px #506632"
+          colorScheme="teal"
+          fontSize="1.6rem"
+          padding="0.5rem"
+          border="none"
+          outline="none"
+          width={{ base: "80%", md: "60%" }}
+          marginTop="4rem"
+          textAlign="center"
+          borderRadius="5px"
+          letterSpacing="3px"
           onChange={(e) => settitle(e.target.value)}
         />
         <Textarea
           type="text"
           id="inputContent"
-          colorScheme='teal'
+          colorScheme="teal"
           placeholder="Write Blog"
+          boxShadow="0px 0px 4px #506632"
           autoComplete="off"
-          height='17rem'
-          borderRadius='5px'
-            padding='1rem'
-            border='none'
-            outline='none'
-            width='60%'
-            margin='1rem'
+          height="17rem"
+          borderRadius="5px"
+          padding="1rem"
+          border="none"
+          outline="none"
+          width={{ base: "80%", md: "60%" }}
+          margin="1rem"
           onChange={(e) => setcontent(e.target.value)}
         />
 
