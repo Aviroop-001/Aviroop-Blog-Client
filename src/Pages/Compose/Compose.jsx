@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 import swal from "sweetalert";
 import Axios from "axios";
 import API from "../../api";
-import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip, Textarea} from "@chakra-ui/react";
+import { Box, Button, Checkbox, CheckboxGroup, useToast, Tooltip, Textarea, Input} from "@chakra-ui/react";
 
 const Compose = () => {
   //States
@@ -140,7 +140,7 @@ const Compose = () => {
             width={{ base: "85%", md: "70%" }}
             height={{ base: "25vh", md: "15vh" }}
             alignItems="center"
-            justifyContent='center'
+            justifyContent="center"
             marginTop="3rem"
           >
             <Checkbox
@@ -304,7 +304,7 @@ const Compose = () => {
             });
           }}
         />
-        <Textarea
+        <Input
           type="text"
           id="inputTitle"
           placeholder="Title"
@@ -312,8 +312,8 @@ const Compose = () => {
           autoComplete="off"
           boxShadow="0px 0px 4px #506632"
           colorScheme="teal"
-          fontSize="1.6rem"
-          padding="0.5rem"
+          fontSize={{ base: "1.3rem", md: "1.6rem" }}
+          padding={{ base: "0.2rem", md: "0.5rem" }}
           border="none"
           outline="none"
           width={{ base: "80%", md: "60%" }}
@@ -330,7 +330,7 @@ const Compose = () => {
           placeholder="Write Blog"
           boxShadow="0px 0px 4px #506632"
           autoComplete="off"
-          height="17rem"
+          height={{ base: "11rem", md: "17rem" }}
           borderRadius="5px"
           padding="1rem"
           border="none"
