@@ -36,4 +36,12 @@
     .postDesc{
         color: $dark;
     }
+    .backbtn{
+        .MuiSvgIcon-root{
+                font-size: 3rem;
+                @include tab{
+                    font-size: 2rem;
+                }
+        }
+    }
 }

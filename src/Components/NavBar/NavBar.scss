@@ -159,7 +159,9 @@
       }
     }
     .searchMe {
-      flex: 1;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex: 2;
       margin-bottom: 2rem;
     }
   }

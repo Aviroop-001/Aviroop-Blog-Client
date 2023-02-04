@@ -1,14 +1,14 @@
 import './SinglePost.scss';
 import { useState, useEffect } from 'react';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import EditIcon from '@material-ui/icons/Edit';
+import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import {IconButton} from '@material-ui/core';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import API from '../../api';
-import { Box, Image, Tooltip } from '@chakra-ui/react';
+import { Box, Image, Tooltip, Button } from '@chakra-ui/react';
 
 const SinglePost = () => {
 
@@ -55,8 +55,12 @@ const SinglePost = () => {
         }
     }
 
+    const backButton = async() =>{
+        window.location.replace("/");
+    }
+
   return (
-    <Box className='SinglePost'>
+    <Box className='SinglePost' paddingTop='5rem' position='relative'>
         <Box className="postTitle"
         textAlign='center'
         fontSize='2.5rem'
@@ -74,7 +78,7 @@ const SinglePost = () => {
             </Box>
         }
         </Box>
-            <Box className="imageContainer"
+        <Box className="imageContainer"
             width='100%'
             height={{base: '30vh', md: '50vh'}}
             textAlign='center'>
@@ -84,7 +88,7 @@ const SinglePost = () => {
                 objectFit='contain'
                 margin='0px auto'
                 borderRadius='0.4rem'/>
-            </Box>
+        </Box>
         <Box className="postinfo"
         display='flex'
         justifyContent='space-between'
@@ -123,6 +127,7 @@ const SinglePost = () => {
         fontSize='1.1rem'>
             {post.content}
         </Box>
+        <Button className='backbtn' position='absolute' top='1rem' left='1rem' background='none' fontSize='1.5rem' _hover={{background:'none'}} _active={{background:'none'}} onClick={backButton}> <KeyboardBackspaceIcon/> </Button>
     </Box>
   )
 }

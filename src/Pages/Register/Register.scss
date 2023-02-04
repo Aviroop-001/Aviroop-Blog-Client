@@ -3,7 +3,7 @@
 .Register{
     // border: red 1px solid;
     color: $darker;
-    height: calc(100vh - 4rem);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +22,8 @@
         backdrop-filter: blur(5px);
         padding: 1rem;
         @include tab{
-            height: 20rem;
-            width: 15rem;
+            height: 25rem;
+            width: 90%;
         }
         label{
             font-size: 1.2rem;
@@ -55,11 +55,11 @@
         position: absolute;
         padding: 0.5rem auto;
         border-radius: 10px;
-        height: 2rem;
+        height: 2.5rem;
         border: none;
         margin: 1rem;
-        background-color: $light;
-        color: $lighter;
+        background-color: $lightest;
+        color: wheat;
         top: 5rem;
         right: 1rem;
         width: 5rem;
